@@ -154,8 +154,10 @@ const Transactions = () => {
             <div className='title'>
               <h3>Transactions</h3>
             </div>
-            <div className='sr-btn'>
-              <SmallButton title="new transfer" />
+            <div className='sr-btn' >
+              <a href="#new-transfer">
+                <SmallButton title="new transfer" />
+              </a>
             </div>
           </Grid>
           <Grid container sx={{mt: 5}}>
@@ -170,7 +172,7 @@ const Transactions = () => {
                   <Box sx={{px: '16px', minHeight: 50}}>
                     {visible && (
                       <IconButton onClick={() => remove()}>
-                        <DeleteIcon style={{ fontSize: "25px", color: '#fc8181' }} />
+                        <DeleteIcon style={{ fontSize: "25px", color: '#b00000' }} />
                       </IconButton>
                     )}
                   </Box>
@@ -242,7 +244,7 @@ const Transactions = () => {
               </Section>
             </Grid>
             <Grid item xs={12} md={12} lg={8} sx={{mt: 2, p: 2}}>
-              <Section>
+              <Section id="new-transfer">
                 <div className='title'>
                   <h3>new transfer</h3>
                 </div>

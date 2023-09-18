@@ -87,8 +87,7 @@ const DashboardApp = () => {
         <Grid container xs={12} display="flex" justifyContent="space-between">
           <Grid item xs={12} sm={6}>
             <div className='title'>
-              <h3>Hello User.</h3>
-              <p>welcom back!</p>
+              <h3>welcom back!</h3>
             </div>
           </Grid>
           <Grid item xs={12} sm={6} sx={{mt:2}}>
@@ -135,10 +134,7 @@ const DashboardApp = () => {
             <SimpleCard title="total transactions" value={200} />
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
-            <SimpleCard title="total transactions" value={200} />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <SimpleCard title="total transactions" value={200} />
+            <SimpleCard title="Total transactions in this month" value={5} />
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <SimpleCard title="Number of cards" value={3} />

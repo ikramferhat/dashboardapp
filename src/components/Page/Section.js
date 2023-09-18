@@ -8,9 +8,9 @@ const SetionStyle = styled("div")(({ theme }) => ({
   boxShadow: "rgba(100, 100, 111, 0.2) 7px 0px 29px 0px"
 }));
 
-const Section = ({ children }) => {
+const Section = ({ children, id }) => {
   return (
-    <SetionStyle>
+    <SetionStyle id={id}>
       {children}
     </SetionStyle>
   )
