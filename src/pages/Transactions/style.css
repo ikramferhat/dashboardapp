@@ -1,0 +1,18 @@
+#transactions {
+  background-color: var(--color-lightgrey);
+  font-family: 'Noto Sans JP', sans-serif;
+}
+#transactions .title h3, #transactions .title p {
+  text-transform: capitalize;
+  padding: 0px;
+  margin: 5px 0px;
+  color: var(--color-grey);
+}
+#transactions .title h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+#transactions .title p {
+  font-size: 14px;
+  font-weight: 500;
+}

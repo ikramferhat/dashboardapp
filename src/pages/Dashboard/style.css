@@ -1,0 +1,73 @@
+#dashboard {
+  background-color: var(--color-lightgrey);
+}
+#dashboard .title h3, #dashboard .title p {
+  text-transform: capitalize;
+  padding: 0px;
+  margin: 5px 0px;
+  color: var(--color-grey);
+}
+#dashboard .title h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+#dashboard .title p {
+  font-size: 14px;
+  font-weight: 500;
+}
+.sr-btn {
+  margin-left: 5px;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.chart-container {
+  height: 100%;
+  width: 100%;
+  padding: 0px 0px;
+  box-sizing: border-box;
+}
+.card-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.card-more a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.card-more a p, .arrow-icon  {
+  padding: 0px;
+  margin: 0px;
+  color: var(--color-grey);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.5s ease;
+}
+.card-more a p {
+  text-transform: capitalize;
+}
+.card-more a:hover p, .card-more a:hover .arrow-icon {
+  color: var(--color-green);
+}
+@media screen and (max-width: 500px){
+  #dashboard .right-sidebar {
+     width: 100%;
+  }
+}
+@media screen and (max-width: 768px){
+  #dashboard .sr-btn {
+    width: 100%;
+    margin-top: 15px;
+    margin-left: 0px;
+  }
+}

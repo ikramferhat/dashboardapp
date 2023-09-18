@@ -1,0 +1,31 @@
+#statistics {
+    background-color: var(--color-lightgrey);
+    font-family: 'Noto Sans JP', sans-serif;
+}
+#statistics .title h3, #statistics .title p {
+    text-transform: capitalize;
+    padding: 0px;
+    margin: 5px 0px;
+    color: var(--color-grey);
+}
+#statistics .title {
+    display: flex;
+}
+#statistics .title .row {
+    margin-left: 20px;
+}
+#statistics .title .row .menu-btn {
+    margin: 0px 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+#statistics .title h3 {
+    font-size: 20px;
+    font-weight: 500;
+}
+#statistics .title p {
+    font-size: 14px;
+    font-weight: 500;
+}

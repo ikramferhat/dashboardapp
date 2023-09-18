@@ -1,0 +1,18 @@
+.hamburger{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  .hamburger div{
+      width: 1.5rem;
+      height: 3px;
+      border-radius: 10px;
+      background-color: var(--color-green);
+      transform-origin: 1px;
+      transition: all 0.3s linear;
+  }

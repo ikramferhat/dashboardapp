@@ -1,0 +1,28 @@
+.btn {
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+    transition:  0.3s ease-in-out;
+    text-transform: capitalize;
+}
+.small {
+    padding: 5px 10px; 
+    background-color:  rgba(71, 191, 179, 0.2);
+    color: var(--color-green);
+}
+.small:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 7px 0px 29px 0px;
+}
+.large {
+   padding: 10px;
+   width: 100%;
+   color: #ffffff;
+   background: var(--color-green);
+   box-shadow: rgba(100, 100, 111, 0.2) 7px 0px 29px 0px;
+}
+.large:hover {
+    background-color: rgba(53, 190, 177, 0.8);
+}
