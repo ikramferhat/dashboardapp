@@ -1,5 +1,4 @@
 import React from 'react';
-import CircularProgressWithLabel from '../Progress/Circular';
 import './style.css';
 
 const SimpleCard = ({title, money, value }) => {
@@ -14,5 +13,3 @@ const SimpleCard = ({title, money, value }) => {
 }
 
 export default SimpleCard;
-
-/*<CircularProgressWithLabel variant="determinate"  value={75} />*/
