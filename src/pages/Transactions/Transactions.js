@@ -19,7 +19,7 @@ import { styled } from '@mui/material/styles';
 import { TransferForm } from '../../components/Form';
 import { Page, Section } from '../../components/Page';
 import Search from '../../components/Search/Search';
-import { SmallButton } from '../../components/Buttons/Button';
+import Button from '../../components/Buttons/Button';
 import './style.css';
 
 const StyledTableCell = styled(TableCell)({
@@ -161,7 +161,7 @@ const Transactions = () => {
             </div>
             <div className='sr-btn' >
               <a href="#new-transfer">
-                <SmallButton title="new transfer" />
+                <Button small title="new transfer" />
               </a>
             </div>
           </Grid>
@@ -231,7 +231,7 @@ const Transactions = () => {
                               {row.status}
                             </StyledTableCell>
                             <StyledTableCell>
-                              <SmallButton title="details" />
+                              <Button small title="details" />
                             </StyledTableCell>
                           </TableRow>
                         )})}

@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards } from 'swiper/modules';
 import { Page, Section } from '../../components/Page';
 import { CreditCard } from '../../components/Card';
-import { SmallButton } from '../../components/Buttons/Button';
+import Button from '../../components/Buttons/Button';
 import { CreditCardDATA } from '../../DataText';
 import { AddCreditCardForm } from '../../components/Form';
 import 'swiper/css';
@@ -24,7 +24,7 @@ const Cards = () => {
             </div>
             <div className='sr-btn'>
               <a href="#new-credit-card">
-                <SmallButton title="add new card" />
+                <Button small title="add new card" />
               </a>
             </div>
           </Grid>

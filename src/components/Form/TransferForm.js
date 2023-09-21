@@ -5,7 +5,7 @@ import { Box, Icon } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import PaymentIcon from '@mui/icons-material/Payment';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import { LargeButton } from '../Buttons/Button';
+import Button from '../Buttons/Button';
 import { SelectInput, FilledInputText, OutlineInput } from './Input';
 
 const TransferForm = ({creditCardData}) => {
@@ -69,7 +69,7 @@ const TransferForm = ({creditCardData}) => {
           helperText={touched.amount && errors.amount}
         />
         <div style={{margin: '30px 0px'}}>
-          <LargeButton type="submit" title="transfer money" />
+          <Button type="submit" title="transfer money" />
         </div>
         </Form>
       </FormikProvider>

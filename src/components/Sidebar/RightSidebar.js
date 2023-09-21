@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { IconButton } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { LargeButton } from '../Buttons/Button';
+import Button from '../Buttons/Button';
 import { AddCreditCardForm } from '../Form';
 import './style.css';
 
@@ -43,7 +43,7 @@ const RightSidebar = ({open,close,data}) => {
               <p>{data?.valid?.m} / {data?.valid?.y}</p>
             </div>
             <div className='bottom'>
-              <LargeButton title="add new card" click={() => setAdd(true)} />
+              <Button title="add new card" click={() => setAdd(true)} />
             </div>
           </div>
           <div className='wrapper add-card' style={{transform: add && 'translateX(0)' }}>

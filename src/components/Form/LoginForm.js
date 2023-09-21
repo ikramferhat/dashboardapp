@@ -4,7 +4,7 @@ import { useFormik, Form, FormikProvider } from 'formik';
 import * as Yup from 'yup';
 import { Box, Checkbox, IconButton, InputAdornment, Icon } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { LargeButton } from '../Buttons/Button';
+import Button from '../Buttons/Button';
 import { OutlineInput } from './Input';
 import Context from '../../Context';
 
@@ -79,7 +79,7 @@ const LoginForm = () => {
             <p>Remember me</p>
           </Box>
           <div style={{margin: '30px 0px'}}>
-            <LargeButton type="submit" title="login" />
+            <Button type="submit" title="login" />
           </div>
         </Form>
       </FormikProvider>

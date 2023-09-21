@@ -17,7 +17,7 @@ import Search from '../../components/Search/Search';
 import { CreditCard, SimpleCard, MoneyCard } from '../../components/Card';
 import { LineChart, PieChart } from '../../components/Chart';
 import { TransferForm } from '../../components/Form';
-import { SmallButton, LargeButton } from '../../components/Buttons/Button';
+import Button from '../../components/Buttons/Button';
 import { InputDate } from '../../components/Form/Input';
 import { RightSidebar } from '../../components/Sidebar';
 import { Page, Section } from '../../components/Page';
@@ -101,7 +101,7 @@ const DashboardApp = () => {
           <Grid item xs={12} sm={4} sx={{p: 1}}>
             <div className='card-more'>
             <Link to="cards">
-              <SmallButton title="add new card" />
+              <Button small title="add new card" />
             </Link>
               <Link to="cards">
                 <p>see more cards</p>
@@ -185,7 +185,7 @@ const DashboardApp = () => {
                             {row.status}
                           </StyledTableCell>
                           <StyledTableCell>
-                            <SmallButton title="details" />
+                            <Button small title="details" />
                           </StyledTableCell>
                         </TableRow>
                       ))}
@@ -197,7 +197,7 @@ const DashboardApp = () => {
                 <div className='search-container'>
                   <Search withShadow startIcon />
                   <div className='sr-btn'>
-                    <LargeButton title="see all history" />
+                    <Button title="see all history" />
                   </div>
                 </div>
               </Grid>

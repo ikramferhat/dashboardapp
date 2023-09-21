@@ -2,7 +2,7 @@ import React from 'react';
 import { useFormik, Form, FormikProvider } from 'formik';
 import * as Yup from 'yup';
 import { Box, TextField } from '@mui/material';
-import { LargeButton } from '../Buttons/Button';
+import Button from '../Buttons/Button';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { OutlineInput, InputDate } from './Input';
 
@@ -83,7 +83,7 @@ const AddCreditCardForm = ({creditCardData}) => {
             <p style={textStyle}>3 or 4 digits usually found on the signature strip</p>
           </Box>
           <div style={{margin: '30px 0px'}}>
-            <LargeButton type="submit" title="add" />
+            <Button type="submit" title="add" />
           </div>
         </Form>
       </FormikProvider>
