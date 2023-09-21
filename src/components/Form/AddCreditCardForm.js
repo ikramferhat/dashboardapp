@@ -83,7 +83,7 @@ const AddCreditCardForm = ({creditCardData}) => {
             <p style={textStyle}>3 or 4 digits usually found on the signature strip</p>
           </Box>
           <div style={{margin: '30px 0px'}}>
-            <LargeButton type="submit" title="transfer money" />
+            <LargeButton type="submit" title="add" />
           </div>
         </Form>
       </FormikProvider>

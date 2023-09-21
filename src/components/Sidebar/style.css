@@ -1,6 +1,6 @@
 #sid {
     min-height: 100vh;
-    width: 200px;
+    width: 230px;
     background-color: var(--color-lightgrey);
     font-family: 'Noto Sans JP', sans-serif;
 }
@@ -73,6 +73,9 @@
     font-size: 13px;
     font-weight: 500;
 }
+.right .title {
+    margin: 10px 0px 20px 0px;
+}
 .right .container .wrapper .row .active{
     color: var(--color-pink);
 }
@@ -88,7 +91,7 @@
 }
 .left {
     left: 0;
-    width: 200px;
+    width: 230px;
     z-index: 13;
     background-color: var(--color-lightgrey);
     border-right: 0.5px solid rgb(209, 209, 209);
@@ -113,15 +116,14 @@
     font-weight: 500;
 }
 .sidebar .liste a {
-    padding: 25px 10px;
+    padding: 20px 10px;
     text-transform: capitalize;
     color: var(--color-grey);
     margin: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 0.9rem;
     text-decoration: none;
     background-color: transparent;
     transition: all 0.3s;

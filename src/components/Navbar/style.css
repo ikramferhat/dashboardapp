@@ -1,7 +1,7 @@
 #nav {
     position: fixed;
     top: 0;
-    left: 200px;
+    left: 230px;
     right: 0px;
     flex-shrink: 0;
     height: 70px;
@@ -33,6 +33,7 @@
     #nav {
       left: 0;
       width: 100%;
+      box-shadow: none;
     }
     .hamb {
         display: block;

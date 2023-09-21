@@ -48,7 +48,7 @@ const RightSidebar = ({open,close,data}) => {
           </div>
           <div className='wrapper add-card' style={{transform: add && 'translateX(0)' }}>
             <div className='title'>
-              <h3>add new credit card</h3>
+              <h3>add a new credit card</h3>
             </div>
             <AddCreditCardForm />
           </div>

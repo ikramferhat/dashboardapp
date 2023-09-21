@@ -36,7 +36,10 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 200px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  border: 1px solid #47C4B8;
 }
 .card-more a {
   display: flex;

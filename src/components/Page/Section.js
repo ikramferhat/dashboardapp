@@ -5,7 +5,8 @@ const SetionStyle = styled("div")(({ theme }) => ({
   padding: "15px",
   borderRadius: "15px",
   backgroundColor: theme.palette.background.default,
-  boxShadow: "rgba(100, 100, 111, 0.2) 7px 0px 29px 0px"
+  boxShadow: "rgba(100, 100, 111, 0.2) 7px 0px 29px 0px",
+  scrollMarginTop: '5.2rem'
 }));
 
 const Section = ({ children, id }) => {

@@ -6,3 +6,8 @@ export const PrivateRoute = ({ children }) => {
   const { user } = useContext(Context);
   return !user ? <Navigate to="/" /> : children;
 };
+
+export const PrivateRoute1 = ({ children }) => {
+  const { user } = useContext(Context);
+  return user ? <Navigate to="/dashboard" /> : children;
+};

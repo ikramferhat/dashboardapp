@@ -2,39 +2,14 @@ import React, { useState } from 'react'
 import { Container, Grid } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCards } from 'swiper/modules';
-import { Page } from '../../components/Page';
+import { Page, Section } from '../../components/Page';
 import { CreditCard } from '../../components/Card';
 import { SmallButton } from '../../components/Buttons/Button';
+import { CreditCardDATA } from '../../DataText';
+import { AddCreditCardForm } from '../../components/Form';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import './style.css';
-
-const creditCard = [
-    {
-      id: 1,
-      type: 'card-type',
-      cardNumber: '2526417036958956',
-      cardHolder: 'username',
-      valid: {m: 10, y: 24},
-      currentBalance: '200'
-    },
-    {
-      id: 2,
-      type: 'card-type',
-      cardNumber: '2222417036954074',
-      cardHolder: 'username',
-      valid: {m: 9, y: 25},
-      currentBalance: '2000'
-    },
-    {
-      id: 3,
-      type: 'card-type',
-      cardNumber: '111141702885142',
-      cardHolder: 'username',
-      valid: {m: 10, y: 23},
-      currentBalance: '100'
-    }
-];
 
 const Cards = () => {
   const [swiper, setSwiper] = useState(0);
@@ -43,39 +18,34 @@ const Cards = () => {
     <div id="cards">
       <Container maxWidth="xl">
         <Page>
-          <Grid item xs={12} display="flex" justifyContent="space-between" alignItems="center">
+          <Grid item xs={12} sx={{ p: 2 }} display="flex" justifyContent="space-between" alignItems="center">
             <div className='title'>
               <h3>Cards</h3>
             </div>
             <div className='sr-btn'>
-              <SmallButton title="add new card" />
+              <a href="#new-credit-card">
+                <SmallButton title="add new card" />
+              </a>
             </div>
           </Grid>
-          <Grid container xs={12} sx={{ mt: 5 }}>
-            <Grid item xs={12} md={6}>
+          <Grid container xs={12} sx={{ mt: 5 }} justifyContent="space-between" alignItems="center">
+            <Grid item xs={12} md={4} sx={{ display: 'flex', justifyContent: {xs: 'center', md: 'flex-start'} }}>
               <Swiper onActiveIndexChange={(swiperCore) => { setSwiper(swiperCore.activeIndex); }} effect={'cards'} grabCursor={true} modules={[EffectCards]}>
-                {creditCard.map((item, i) => {
+                {CreditCardDATA.map((item, i) => {
                   return (
                     <SwiperSlide>
-                      <CreditCard
-                        key={item.id}
-                        type={item.type}
-                        cardHolder={item.cardHolder}
-                        cardNumber={item.cardNumber}
-                        valid={item.valid}
-                      />
+                      <CreditCard key={item.id} item={item} />
                     </SwiperSlide>
                   )
                 })}
               </Swiper>
             </Grid>
-            <Grid item xs={12} md={6} sx={{ mt: {xs: 4, md: 0} }}>
+            <Grid item xs={12} md={7} sx={{ mt: {xs: 4, md: 0}, display: 'flex', justifyContent: {xs: 'center', md: 'flex-start'} }}>
               <div className='card-info-container'>
-                <div className='divider' />
                 <h3>card informations</h3>
                 <div className='row'>
                   <p>current balance</p>
-                  <p>{creditCard[swiper].currentBalance} $</p>
+                  <p>{CreditCardDATA[swiper].currentBalance} $</p>
                 </div>
                 <div className='row'>
                   <p>status</p>
@@ -83,21 +53,29 @@ const Cards = () => {
                 </div>
                 <div className='row'>
                   <p>type of card</p>
-                  <p>{creditCard[swiper].type}</p>
+                  <p>{CreditCardDATA[swiper].type}</p>
                 </div>
                 <div className='row'>
                   <p>card holder</p>
-                  <p>{creditCard[swiper].cardHolder}</p>
+                  <p>{CreditCardDATA[swiper].cardHolder}</p>
                 </div>
                 <div className='row'>
                   <p>card number</p>
-                  <p>{creditCard[swiper].cardNumber}</p>
+                  <p>{CreditCardDATA[swiper].cardNumber}</p>
                 </div>
                 <div className='row'>
                   <p>expiration date</p>
-                  <p>{creditCard[swiper]?.valid?.m} / {creditCard[swiper]?.valid?.y}</p>
+                  <p>{CreditCardDATA[swiper]?.valid?.m} / {CreditCardDATA[swiper]?.valid?.y}</p>
                 </div>
               </div>
+            </Grid>
+            <Grid item xs={12} md={12} lg={6} sx={{mt: 15, p: 2}}>
+              <Section id="new-credit-card">
+                <div className='title'>
+                  <h3>add a new credit card</h3>
+                </div>
+                <AddCreditCardForm  />
+              </Section>
             </Grid>
           </Grid>
         </Page>

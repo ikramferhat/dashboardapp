@@ -56,8 +56,8 @@ const LeftSidebar = ({ hamburgerOpen, toggleHamburger, width, breakpoint }) => {
             )
           })}
         </div>
-        <Divider sx={{ m: 1 }} />
-        <Box sx={{ p: '10px', pb: '100px'}}>
+        <Divider sx={{ m: 1, my: 3 }} />
+        <Box sx={{ px: '10px', pb: '70px'}}>
           <SwitchTheme />
         </Box>
       </div>

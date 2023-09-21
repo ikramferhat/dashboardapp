@@ -37,8 +37,10 @@ const SwitchTheme = () => {
     setIsLightTheme(!isLightTheme);
     if (!isLightTheme) {
       localStorage.setItem("theme", "light");
+      document.body.setAttribute('style', 'background: #f7fafc');
     } else {
       localStorage.setItem("theme", "dark");
+      document.body.setAttribute('style', 'background: #363642');
     }
   }
   return (

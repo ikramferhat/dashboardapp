@@ -12,19 +12,21 @@
     box-shadow: rgba(100, 100, 111, 0.5) 7px 0px 29px 0px;
 }
 .card:hover .amount-card {
-    transform: translateY(0px);
+    transform: translateY(5px);
 }
 .card .amount-card {
     position: absolute;
-    bottom: -35px;
+    bottom: -30px;
     left: 0;
     right: 0;
-    margin: 0 auto;
-    width: 150px;
-    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px 0px 10px 0px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: #22645e;
+    background-color: #000000;
     transform: translateY(-35px);
     transition: transform 0.5s ease;
 }
@@ -32,6 +34,8 @@
    margin: 0px;
    text-align: center;
    color: white;
+   font-size: 14px;
+   font-weight: 500;
 }
 .gradian {
     width: 100%;
@@ -61,22 +65,10 @@
 .content-column {
     flex-direction: column;
 }
-.img-top, .chip-top {
-    flex-grow: 1;
-    align-items: flex-start;
-}
-.img-top {
-    justify-content: flex-end;
-}
 .content-row img, .chip-top img {
     width: 50px;
-    object-fit: contain;
-}
-.content-row img {
-    height: 20px;
-}
-.chip-top img {
     height: 40px;
+    object-fit: contain;
 }
 .card p {
     margin: 5px 0px;

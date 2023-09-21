@@ -24,11 +24,16 @@ import './style.css';
 
 const StyledTableCell = styled(TableCell)({
   borderBottom: 'none',
-  textTransform: 'capitalize'
+  textTransform: 'capitalize',
+  fontSize: '13px',
+  fontWeight: 600
 });
   
 const StyledTableHead = styled(TableCell)({
-  fontWeight: 'bold'
+  fontSize: '15px',
+  fontWeight: 600,
+  textTransform: 'capitalize',
+  color:' #9c9797'
 });
   
 function createData(id, name, amount, date, status) {
@@ -36,16 +41,16 @@ function createData(id, name, amount, date, status) {
 }
   
 const rows = [
-  createData('1','sara','+90','9/5/2023','completed'),
-  createData('2','nermine','-10','9/4/2023', 'reviewed'),
-  createData('3','maria','-107','2/2/2023','completed'),
-  createData('4','joe','+20','1/1/2023','completed'),
-  createData('5','wafa','+1.7','3/3/2022','reviewed'),
-  createData('6','mira','-9','9/10/2022','completed'),
-  createData('7','malika','-30','9/2/2022','completed'),
-  createData('8','ikram','+87','1/2/2021','completed'),
-  createData('9','katrina','+20','1/8/2021','completed'),
-  createData('10','sofia','-1.7','3/3/2020','completed'),
+  createData('14515','sara','+90','9/5/2023','recieved'),
+  createData('2458','nermine','-10','9/4/2023', 'sent'),
+  createData('3785','maria','-107','2/2/2023','sent'),
+  createData('44785','joe','+20','1/1/2023','recieved'),
+  createData('58745','wafa','+1.7','3/3/2022','recieved'),
+  createData('6777','mira','-9','9/10/2022','sent'),
+  createData('74155','malika','-30','9/2/2022','sent'),
+  createData('84786','ikram','+87','1/2/2021','recieved'),
+  createData('95555','katrina','+20','1/8/2021','recieved'),
+  createData('10455','sofia','-1.7','3/3/2020','sent'),
 ];
 const creditCard = [
     {
@@ -150,7 +155,7 @@ const Transactions = () => {
     <div id="transactions">
       <Container maxWidth="xl">
         <Page>
-          <Grid item xs={12} display="flex" justifyContent="space-between" alignItems="center">
+          <Grid item xs={12} sx={{ p: 2 }} display="flex" justifyContent="space-between" alignItems="center">
             <div className='title'>
               <h3>Transactions</h3>
             </div>
@@ -186,12 +191,13 @@ const Transactions = () => {
                               onChange={(event) => selectAll(event.target.checked)}
                               sx={{ color: '#35beb1', '&.Mui-checked': { color: '#35beb1' } }}
                             />
-                            <span>Name</span>
+                            <span>transaction id</span>
                           </StyledTableHead>
-                          <StyledTableHead>Amount</StyledTableHead>
-                          <StyledTableHead>Date</StyledTableHead>
-                          <StyledTableHead>Status</StyledTableHead>
-                          <StyledTableHead>Actions</StyledTableHead>
+                          <StyledTableHead>name</StyledTableHead>
+                          <StyledTableHead>amount</StyledTableHead>
+                          <StyledTableHead>date</StyledTableHead>
+                          <StyledTableHead>status</StyledTableHead>
+                          <StyledTableHead>actions</StyledTableHead>
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -213,14 +219,15 @@ const Transactions = () => {
                                   checked={checked !== null && checked[row.id]}
                                   sx={{ color: '#35beb1', '&.Mui-checked': { color: '#35beb1' } }}
                                 />
-                                {row.name}
+                                {row.id}
                               </Stack>
                             </StyledTableCell>
+                            <StyledTableCell>{row.name}</StyledTableCell>
                             <StyledTableCell style={{color: row.amount.charAt(0) === "+" ? '#47C4B8' : "red"}}>
                               {row.amount} $
                             </StyledTableCell>
                             <StyledTableCell>{row.date}</StyledTableCell>
-                            <StyledTableCell sx={{color: row.status === "completed" ? '#47C4B8' : '#ffbe0a'}}>
+                            <StyledTableCell sx={{color: row.status === "recieved" ? '#47C4B8' : '#ffbe0a'}}>
                               {row.status}
                             </StyledTableCell>
                             <StyledTableCell>

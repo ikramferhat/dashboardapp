@@ -13,7 +13,7 @@ const RootStyle = styled('div')({
 const MainStyle = styled('div')({
   flexGrow: 1,
   minHeight: '100vh',
-  width: 'calc(100% - 200px)'
+  width: 'calc(100% - 230px)'
 });
 
 const Layout = () => {

@@ -1,11 +1,7 @@
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom';
-import DashboardApp from './pages/Dashboard/DashboardApp';
-import Transactions from './pages/Transactions/Transactions';
-import Statistics from './pages/Statistics/Statistics';
-import { PrivateRoute } from './PrivateRoute';
-import Login from './pages/Login/Login';
-import Cards from './pages/Cards/Cards';
+import { DashboardApp, Cards, Statistics, Login, Transactions, NotFound } from './pages';
+import { PrivateRoute, PrivateRoute1 } from './PrivateRoute';
 import Layout from './Layout/Layout';
 
 const RouteConfig = () => {
@@ -14,7 +10,9 @@ const RouteConfig = () => {
       <Route
         path="/"
         element={
+          <PrivateRoute1>
             <Login />
+          </PrivateRoute1>
         }
       />
       <Route
@@ -30,6 +28,8 @@ const RouteConfig = () => {
         <Route path='cards' element={<Cards />} />
         <Route path='statistics' element={<Statistics />} />
       </Route>
+      <Route path="404" element={<NotFound />} />
+      <Route path="*" element={<Navigate to="/404" />} />
     </Routes>
   )
 }

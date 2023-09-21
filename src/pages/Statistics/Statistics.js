@@ -4,7 +4,7 @@ import ShowChartIcon from '@mui/icons-material/ShowChart';
 import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
 import { Page, Section } from '../../components/Page';
 import { LineChart, BarChart, RadialBar } from '../../components/Chart';
-import { BarLineChartDATA, RadialChartDATA } from '../../components/Chart/CHARTDATA';
+import { BarLineChartDATA, RadialChartDATA } from '../../DataText';
 import './style.css';
 
 const Statistics = () => {
@@ -22,7 +22,7 @@ const Statistics = () => {
     <div id="statistics">
       <Container maxWidth="xl">
         <Page>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={6} sx={{ p: 2 }}>
             <div className='title'>
               <h3>Statistics</h3>
             </div>

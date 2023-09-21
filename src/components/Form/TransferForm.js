@@ -11,7 +11,7 @@ import { SelectInput, FilledInputText, OutlineInput } from './Input';
 const TransferForm = ({creditCardData}) => {
   const Schema = Yup.object().shape({
     amount: Yup.string().required('Amount is required'),
-    payment: Yup.string().required('Payment is required')
+    payment: Yup.string().required('Payment receiver is required')
   });
 
   const formik = useFormik({
@@ -35,6 +35,9 @@ const TransferForm = ({creditCardData}) => {
         <SelectInput
           id="outlined-select-credit-card"
           fullWidth
+          MenuProps={{
+            disableScrollLock: true,
+          }}
           defaultValue={creditCardData[0].cardNumber}
           startAdornment={
             <Icon component={PaymentIcon} sx={{mr: 2}} style={{ color: '#35beb1' }} />

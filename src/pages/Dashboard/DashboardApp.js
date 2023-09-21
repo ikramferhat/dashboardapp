@@ -21,16 +21,21 @@ import { SmallButton, LargeButton } from '../../components/Buttons/Button';
 import { InputDate } from '../../components/Form/Input';
 import { RightSidebar } from '../../components/Sidebar';
 import { Page, Section } from '../../components/Page';
-import { PieChartDATA, LineChartDATA } from '../../components/Chart/CHARTDATA';
+import { PieChartDATA, LineChartDATA, CreditCardDATA } from '../../DataText';
 import './style.css';
 
 const StyledTableCell = styled(TableCell)({
   borderBottom: 'none',
-  textTransform: 'capitalize'
+  textTransform: 'capitalize',
+  fontSize: '13px',
+  fontWeight: 600
 });
   
 const StyledTableHead = styled(TableCell)({
-  fontWeight: 'bold'
+  fontSize: '15px',
+  fontWeight: 600,
+  textTransform: 'capitalize',
+  color:' #9c9797'
 });
 
 function createData(id, name, amount, date, status) {
@@ -38,30 +43,11 @@ function createData(id, name, amount, date, status) {
 }
 
 const rows = [
-  createData('1','sara','+90','9/5/2023','completed'),
-  createData('2','nermine','-10','9/4/2023', 'reviewed'),
-  createData('3','maria','-107','2/2/2023','completed'),
-  createData('4','joe','+20','1/1/2023','completed'),
-  createData('5','wafa','+1.7','3/3/2022','reviewed'),
-];
-
-const creditCard = [
-  {
-    id: 1,
-    type: 'card-type',
-    cardNumber: '2555417036958956',
-    cardHolder: 'username',
-    valid: {m: 10, y: 24},
-    currentBalance: '2000'
-  },
-  {
-    id: 2,
-    type: 'card-type',
-    cardNumber: '2555417036954074',
-    cardHolder: 'username',
-    valid: {m: 9, y: 25},
-    currentBalance: '200'
-  }
+  createData('1','sara','+90','9/5/2023','recieved'),
+  createData('2','nermine','-10','9/4/2023', 'sent'),
+  createData('3','maria','-107','2/2/2023','sent'),
+  createData('4','joe','+20','1/1/2023','recieved'),
+  createData('5','wafa','+1.7','3/3/2022','recieved'),
 ];
 
 const DashboardApp = () => {
@@ -84,13 +70,13 @@ const DashboardApp = () => {
     <div id="dashboard">
       <Container maxWidth="xl">
       <Page>
-        <Grid container xs={12} display="flex" justifyContent="space-between">
+        <Grid container sx={{ p: 2 }} xs={12} display="flex" justifyContent="space-between">
           <Grid item xs={12} sm={6}>
             <div className='title'>
               <h3>welcom back!</h3>
             </div>
           </Grid>
-          <Grid item xs={12} sm={6} sx={{mt:2}}>
+          <Grid item xs={12} sm={6} sx={{mt: 2}}>
             <Search endIcon />
           </Grid>
           <Grid item xs={12} sx={{mt:2}}>
@@ -99,26 +85,24 @@ const DashboardApp = () => {
             </DemoContainer>
           </Grid>
         </Grid>
-        <Grid container sx={{mt: 4}}>
-          {creditCard.map((item, i) => {
+        <Grid container sx={{mt: 4, justifyContent: {sm: 'center'}}} display='flex'>
+          {CreditCardDATA.slice(0,2).map((item, i) => {
             return (
               <Grid item xs={12} sm={6} md={6} lg={4} sx={{p: 1}}>
                 <CreditCard
                   key={item.id}
-                  type={item.type}
-                  cardHolder={item.cardHolder}
-                  cardNumber={item.cardNumber}
-                  currentBalance={item.currentBalance}
-                  valid={item.valid}
+                  item={item}
                   click={() => {toggleSidePaper(item)}}
                   amount
                 />
               </Grid>
             )
           })}
-          <Grid item xs={12} sm={12} md={12} lg={4}>
+          <Grid item xs={12} sm={4} sx={{p: 1}}>
             <div className='card-more'>
+            <Link to="cards">
               <SmallButton title="add new card" />
+            </Link>
               <Link to="cards">
                 <p>see more cards</p>
                 <ArrowForwardIcon className='arrow-icon' color="red" />
@@ -182,11 +166,11 @@ const DashboardApp = () => {
                   <Table aria-label="simple table">
                     <TableHead>
                       <TableRow>
-                        <StyledTableHead>Name</StyledTableHead>
-                        <StyledTableHead>Amount</StyledTableHead>
-                        <StyledTableHead>Date</StyledTableHead>
-                        <StyledTableHead>Status</StyledTableHead>
-                        <StyledTableHead>Actions</StyledTableHead>
+                        <StyledTableHead>name</StyledTableHead>
+                        <StyledTableHead>amount</StyledTableHead>
+                        <StyledTableHead>date</StyledTableHead>
+                        <StyledTableHead>status</StyledTableHead>
+                        <StyledTableHead>actions</StyledTableHead>
                       </TableRow>
                     </TableHead>
                     <TableBody>
@@ -197,7 +181,7 @@ const DashboardApp = () => {
                             {row.amount} $
                           </StyledTableCell>
                           <StyledTableCell>{row.date}</StyledTableCell>
-                          <StyledTableCell sx={{color: row.status === "completed" ? '#47C4B8' : '#ffbe0a'}}>
+                          <StyledTableCell sx={{color: row.status === "recieved" ? '#47C4B8' : '#ffbe0a'}}>
                             {row.status}
                           </StyledTableCell>
                           <StyledTableCell>
@@ -224,7 +208,7 @@ const DashboardApp = () => {
               <div className='title'>
                 <h3>new transfer</h3>
               </div>
-              <TransferForm creditCardData={creditCard} />
+              <TransferForm creditCardData={CreditCardDATA} />
             </Section>
           </Grid>
         </Grid>

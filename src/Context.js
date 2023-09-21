@@ -12,8 +12,10 @@ export const ContextProvider = ({ children }) => {
     const theme = localStorage.getItem('theme')
     if(theme === null || theme === 'light') {
       setIsLightTheme(true);
+      document.body.setAttribute('style', 'background: #f7fafc');
     }else{
       setIsLightTheme(false);
+      document.body.setAttribute('style', 'background: #363642');
     }
   }
 
