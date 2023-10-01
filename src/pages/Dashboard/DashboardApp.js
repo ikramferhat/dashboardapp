@@ -73,7 +73,7 @@ const DashboardApp = () => {
         <Grid container sx={{ p: 2 }} xs={12} display="flex" justifyContent="space-between">
           <Grid item xs={12} sm={6}>
             <div className='title'>
-              <h3>welcom back!</h3>
+              <h3>welcome back!</h3>
             </div>
           </Grid>
           <Grid item xs={12} sm={6} sx={{mt: 2}}>
